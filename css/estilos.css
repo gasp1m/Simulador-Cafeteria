@@ -168,4 +168,20 @@ body{
     padding-top: 20px;
 }
 
+.delete-product{
+    cursor: pointer
+}
+
+.cantidad-carrito {
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 4px;
+    top: 37px;
+    right: 14px;
+    position: absolute;
+    display: none;
+}
+
 
