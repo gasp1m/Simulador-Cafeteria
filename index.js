@@ -5,7 +5,7 @@ const shopContent = document.getElementById('shopContent');
 const verCarrito = document.getElementById('verCarrito');
 const modalContainer = document.getElementById('modal-container');
 
-let carrito = [];
+let carrito = obtenerCarrito() || [];
 
 productos.forEach((product) => {
     let content = document.createElement('div');
@@ -31,7 +31,7 @@ productos.forEach((product) => {
             nombre: product.nombre,
             precio: product.precio,
         });
-        console.log(carrito);
+        guardarCarrito(carrito);
     });
 });
 
