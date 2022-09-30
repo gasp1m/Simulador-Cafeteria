@@ -1,4 +1,5 @@
 import { productos } from './js/products.js';
+import { guardarCarrito, obtenerCarrito } from './js/storage.js';
 
 const shopContent = document.getElementById('shopContent');
 const verCarrito = document.getElementById('verCarrito');
