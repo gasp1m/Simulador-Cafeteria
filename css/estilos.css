@@ -4,6 +4,7 @@ html{
 
 body{
     margin: 0px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .nav-container{
@@ -82,7 +83,6 @@ body{
     max-width: 300px;
     margin: auto;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
 }
 
 .card > img{
