@@ -106,6 +106,7 @@ const eliminarProducto = () => {
     });
     carritoCounter();
     pintarCarrito();
+    guardarCarrito(carrito);
 };
 
 const carritoCounter = () => {
