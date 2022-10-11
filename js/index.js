@@ -7,6 +7,7 @@ const modalContainer = document.getElementById('modal-container');
 const cantidadCarrito = document.getElementById('cantidadCarrito');
 
 let carrito = obtenerCarrito() || [];
+carritoCounter();
 
 productos.forEach((product) => {
     let content = document.createElement('div');
