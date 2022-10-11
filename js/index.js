@@ -7,6 +7,7 @@ const modalContainer = document.getElementById('modal-container');
 const cantidadCarrito = document.getElementById('cantidadCarrito');
 
 let carrito = obtenerCarrito() || [];
+carritoCounter();
 
 productos.forEach((product) => {
     let content = document.createElement('div');
@@ -114,23 +115,4 @@ const carritoCounter = () => {
     cantidadCarrito.innerText = carrito.length;
 };
 
-function exito (comprar){
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-      })
-      
-      Toast.fire({
-        icon: 'success',
-        title: 'Producto agregado con éxito'
-      })
-}
-
-export { carrito, carritoCounter};
+export { carrito };
