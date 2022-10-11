@@ -114,4 +114,4 @@ const carritoCounter = () => {
     cantidadCarrito.innerText = carrito.length;
 };
 
-export { carrito };
+export { carrito, carritoCounter};
