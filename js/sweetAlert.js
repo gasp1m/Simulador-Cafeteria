@@ -51,15 +51,15 @@ const { value: password } = await Swal.fire({
 const inputOptions = new Promise((resolve) => {
     setTimeout(() => {
       resolve({
-        'Hombre': 'Hombre',
-        'Mujer': 'Mujer',
+        'Frío': 'Frío',
+        'Caliente': 'Caliente',
         'Otro': 'Otro'
       })
     }, 1000)
   })
   
-  const { value: genero } = await Swal.fire({
-    title: 'Selecciona tu género',
+  const { value: cafes } = await Swal.fire({
+    title: 'Selecciona tu tipo de café favorito',
     input: 'radio',
     icon: 'question',
     allowOutsideClick: false,
@@ -73,7 +73,7 @@ const inputOptions = new Promise((resolve) => {
     }
   })
 
-if (user && password && genero){
+if (user && password && cafes){
     Swal.fire({
         icon: 'success',
         title: 'Listo!',
