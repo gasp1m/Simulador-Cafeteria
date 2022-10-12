@@ -99,10 +99,10 @@ const pintarCarrito = () => {
 verCarrito.addEventListener('click', pintarCarrito);
 
 const eliminarProducto = () => {
-    const foundIt = carrito.find((element) => element.id)
+    const foundId = carrito.find((element) => element.id)
 
     carrito = carrito.filter((carritoId) => {
-        return carritoId !== foundIt;
+        return carritoId !== foundId;
     });
     carritoCounter();
     pintarCarrito();
