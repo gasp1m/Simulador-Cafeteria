@@ -1,4 +1,4 @@
-import { productos } from './products.js';
+import { productos } from "./products.js";
 import { guardarCarrito, obtenerCarrito } from "./storage.js";
 
 const shopContent = document.getElementById('shopContent');
@@ -6,7 +6,14 @@ const verCarrito = document.getElementById('verCarrito');
 const modalContainer = document.getElementById('modal-container');
 const cantidadCarrito = document.getElementById('cantidadCarrito');
 
+const carritoCounter = () => {
+    cantidadCarrito.style.display = 'block';
+    cantidadCarrito.innerText = carrito.length;
+};
+
 let carrito = obtenerCarrito() || [];
+carritoCounter();
+
 
 productos.forEach((product) => {
     let content = document.createElement('div');
@@ -93,6 +100,7 @@ const pintarCarrito = () => {
     const totalBuying = document.createElement('div');
     totalBuying.className = "total-content";
     totalBuying.innerHTML = `Total a pagar: $${total}`;
+    
     modalContainer.append(totalBuying);
 }
 
@@ -109,9 +117,3 @@ const eliminarProducto = () => {
     guardarCarrito(carrito);
 };
 
-const carritoCounter = () => {
-    cantidadCarrito.style.display = 'block';
-    cantidadCarrito.innerText = carrito.length;
-};
-
-export { carrito };
