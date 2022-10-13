@@ -1,10 +1,19 @@
-import { productos } from "./products.js";
+import { productos } from './products.js'
 import { guardarCarrito, obtenerCarrito } from "./storage.js";
 
 const shopContent = document.getElementById('shopContent');
 const verCarrito = document.getElementById('verCarrito');
 const modalContainer = document.getElementById('modal-container');
 const cantidadCarrito = document.getElementById('cantidadCarrito');
+
+const variedadesEnElMundo = 'https://api.sampleapis.com/coffee/hot';
+fetch(variedadesEnElMundo)
+  .then(resp => resp.json())
+  .then(data => displayData(data));
+
+function displayData(data) {
+  console.log(data)
+}
 
 const carritoCounter = () => {
     cantidadCarrito.style.display = 'block';

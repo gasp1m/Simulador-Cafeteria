@@ -83,6 +83,7 @@ body{
     max-width: 300px;
     margin: auto;
     text-align: center;
+    padding: 4px;
 }
 
 .card > img{
@@ -175,11 +176,11 @@ body{
 .cantidad-carrito {
     background-color: red;
     color: #fff;
-    border-radius: 50%;
+    border-radius: 70%;
     font-size: 12px;
     padding: 4px;
     top: 37px;
-    right: 14px;
+    right: 16px;
     position: absolute;
     display: none;
 }
@@ -187,4 +188,5 @@ body{
 #btn-login{
     font-weight: 600;
     margin-left: 1430px;
+    cursor: pointer;
 }
