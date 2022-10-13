@@ -15,6 +15,7 @@ function displayData(data) {
   console.log(data)
 }
 
+
 const carritoCounter = () => {
     cantidadCarrito.style.display = 'block';
     cantidadCarrito.innerText = carrito.length;
