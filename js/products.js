@@ -52,7 +52,7 @@ const productos = [
         id: 8,
         nombre: 'Flat White',
         precio: 300,
-        img: 'https://www.nespresso.com/coffee-blog/assets/images/article-52/09_img_940x740.jpg',
+        img: 'https://img.freepik.com/fotos-premium/cafe-latte-o-cafe-capuchino-arte-latte-mesa-madera_49558-655.jpg',
         cantidad: 1,
     },
     {
