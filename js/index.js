@@ -21,7 +21,7 @@ const carritoCounter = () => {
     cantidadCarrito.innerText = carrito.length;
 };
 
-let carrito = obtenerCarrito() || [];
+let carrito =  obtenerCarrito() || [];
 carritoCounter();
 
 
@@ -59,9 +59,11 @@ productos.forEach((product) => {
                 precio: product.precio,
                 cantidad: product.cantidad,
             });
-        }
+            console.log(carrito);
+            console.log(carrito.length);
             guardarCarrito(carrito);
             carritoCounter();
+        }
     });
 });
 
@@ -92,11 +94,29 @@ const pintarCarrito = () => {
             <img src="${product.img}">
             <h3>${product.nombre}</h3>
             <p>$${product.precio}</p>
+            <span class="restar"> ➖ </span>
             <p>Cantidad: ${product.cantidad}</p>
+            <span class="sumar"> ➕ </span>
             <p>Total: $${product.cantidad * product.precio}</p>
         `;
 
         modalContainer.append(carritoContent);
+
+        let restar = document.querySelector('.restar');
+        restar.addEventListener('click', () => {
+            if(product.cantidad !== 1){
+                product.cantidad--;
+            }
+            guardarCarrito();
+            pintarCarrito();
+        });
+
+        let sumar = document.querySelector('.sumar');
+        sumar.addEventListener('click', () => {
+            product.cantidad++;
+            guardarCarrito();
+            pintarCarrito();
+        });
 
         let eliminar = document.createElement('span');
         eliminar.innerText = '❌';
@@ -126,4 +146,3 @@ const eliminarProducto = () => {
     pintarCarrito();
     guardarCarrito(carrito);
 };
-

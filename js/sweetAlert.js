@@ -15,9 +15,9 @@ loginButton.addEventListener('click', () => {
           if (!user || !password) {
             Swal.showValidationMessage(`Por favor, ingresa datos válidos.`)
           }
-          return { login: user, password: password }
+          return { user: user, password: password }
         }
-      }).then((bienvenida) => {
+      }).then( () => {
         Swal.fire(
             'Bienvenido!',
             'Iniciaste sesión con éxito.',

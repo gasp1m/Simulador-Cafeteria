@@ -54,6 +54,11 @@ body{
     font-size: 110px;
 }
 
+.banner-container i:hover{
+    color: #000;
+    transition: .4s;
+}
+
 .banner h1{
     margin: 0;
     color: #fff;
@@ -188,5 +193,18 @@ body{
 #btn-login{
     font-weight: 600;
     margin-left: 1430px;
+    cursor: pointer;
+}
+
+#btn-login:hover{
+    opacity: 0.7;
+    transition: .5s;
+}
+
+.restar{
+    cursor: pointer;
+}
+
+.sumar{
     cursor: pointer;
 }
