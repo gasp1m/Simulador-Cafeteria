@@ -64,6 +64,23 @@ productos.forEach((product) => {
             guardarCarrito(carrito);
             carritoCounter();
         };
+
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+          Toast.fire({
+            icon: 'success',
+            title: 'Se ha agregado un producto al carrito!'
+          });
     });
 });
 
@@ -123,7 +140,25 @@ const pintarCarrito = () => {
         eliminar.className = 'delete-product';
         carritoContent.append(eliminar);
 
-        eliminar.addEventListener('click', eliminarProducto);
+        eliminar.addEventListener('click', () => {
+            eliminarProducto();
+            const toastDos = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.addEventListener('mouseenter', Swal.stopTimer)
+                  toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+              })
+              
+              toastDos.fire({
+                icon: 'error',
+                title: 'Se ha eliminado un producto del carrito!'
+              })
+        })
     });
 
     const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
