@@ -1,5 +1,5 @@
 import { productos } from './products.js'
-import { guardarCarrito, obtenerCarrito } from "./storage.js";
+import { guardarCarrito, obtenerCarrito} from "./storage.js";
 
 const shopContent = document.getElementById('shopContent');
 const verCarrito = document.getElementById('verCarrito');
@@ -21,9 +21,9 @@ const carritoCounter = () => {
     cantidadCarrito.innerText = carrito.length;
 };
 
-let carrito =  obtenerCarrito() || [];
-carritoCounter();
+let carrito = obtenerCarrito() || [];
 
+carritoCounter();
 
 productos.forEach((product) => {
     let content = document.createElement('div');
@@ -101,8 +101,8 @@ const pintarCarrito = () => {
         `;
 
         modalContainer.append(carritoContent);
-
-        let restar = document.querySelector('.restar');
+        
+        let restar = carritoContent.querySelector('.restar');
         restar.addEventListener('click', () => {
             if(product.cantidad !== 1){
                 product.cantidad--;
@@ -111,11 +111,11 @@ const pintarCarrito = () => {
             pintarCarrito();
         });
 
-        let sumar = document.querySelector('.sumar');
+        let sumar = carritoContent.querySelector('.sumar');
         sumar.addEventListener('click', () => {
             product.cantidad++;
             guardarCarrito();
-            pintarCarrito();
+            pintarCarrito()
         });
 
         let eliminar = document.createElement('span');
@@ -146,3 +146,5 @@ const eliminarProducto = () => {
     pintarCarrito();
     guardarCarrito(carrito);
 };
+
+export { carrito }

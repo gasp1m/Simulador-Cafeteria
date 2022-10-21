@@ -1,9 +1,12 @@
-const guardarCarrito = (carrito) => {
+import { carrito } from './index.js'
+
+const guardarCarrito = () => {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 };
 
 const obtenerCarrito = () => {
-    JSON.parse(localStorage.getItem('carrito'));
+    const carritoStorage = JSON.parse(localStorage.getItem('carrito'));
+    return carritoStorage
 };
 
-export { guardarCarrito, obtenerCarrito };
+export { guardarCarrito, obtenerCarrito};
