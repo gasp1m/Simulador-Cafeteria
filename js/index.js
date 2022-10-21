@@ -12,8 +12,8 @@ fetch(variedadesEnElMundo)
   .then(data => displayData(data));
 
 function displayData(data) {
-  console.log(data)
-}
+  console.log(data);
+};
 
 
 const carritoCounter = () => {
@@ -63,7 +63,7 @@ productos.forEach((product) => {
             console.log(carrito.length);
             guardarCarrito(carrito);
             carritoCounter();
-        }
+        };
     });
 });
 
@@ -115,7 +115,7 @@ const pintarCarrito = () => {
         sumar.addEventListener('click', () => {
             product.cantidad++;
             guardarCarrito();
-            pintarCarrito()
+            pintarCarrito();
         });
 
         let eliminar = document.createElement('span');
