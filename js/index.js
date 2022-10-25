@@ -6,8 +6,8 @@ const verCarrito = document.getElementById('verCarrito');
 const modalContainer = document.getElementById('modal-container');
 const cantidadCarrito = document.getElementById('cantidadCarrito');
 
-const variedadesEnElMundo = 'https://api.sampleapis.com/coffee/hot';
-fetch(variedadesEnElMundo)
+const variedades = 'https://api.sampleapis.com/coffee/hot';
+fetch(variedades)
   .then(resp => resp.json())
   .then(data => displayData(data));
 
@@ -32,12 +32,13 @@ productos.forEach((product) => {
         <img src='${product.img}'>
         <h3>${product.nombre}</h3>
         <p class="price">$${product.precio}</p>
+        <p class="description">${product.descripcion}</p>
     `;
 
     shopContent.append(content);
 
     let comprar = document.createElement('button')
-    comprar.innerText = `Comprar`;
+    comprar.innerText = `Agregar al carrito`;
     comprar.className = 'comprar';
     
     content.append(comprar);

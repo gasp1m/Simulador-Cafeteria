@@ -9,14 +9,13 @@ body{
 
 .nav-container{
     position: sticky;
-    z-index: 3;
     top: 0;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-between;
-    height: 12vh;
+    justify-content: center;
+    height: 110px;
     background-color: #1b1b1b;
 }
 
@@ -33,6 +32,11 @@ body{
     margin-right: 40px;
     margin-top: 5px;
     cursor: pointer;
+}
+
+.ver-carrito:hover {
+    opacity: 0.7;
+    transition: .4s;
 }
 
 .banner{
@@ -56,7 +60,7 @@ body{
 
 .banner-container i:hover{
     color: #000;
-    transition: .4s;
+    transition: .3s;
 }
 
 .banner h1{
@@ -88,7 +92,7 @@ body{
     max-width: 300px;
     margin: auto;
     text-align: center;
-    padding: 4px;
+    padding: 7px;
 }
 
 .card > img{
@@ -99,6 +103,10 @@ body{
 .price {
     color: #000;
     font-size: 22px;
+}
+
+.description {
+    font-size: 15px;
 }
 
 .card button {
@@ -192,13 +200,13 @@ body{
 
 #btn-login{
     font-weight: 600;
-    margin-left: 1430px;
+    margin-left: 1460px;
     cursor: pointer;
 }
 
 #btn-login:hover{
     opacity: 0.7;
-    transition: .5s;
+    transition: .4s;
 }
 
 .restar{
