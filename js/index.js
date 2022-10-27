@@ -116,6 +116,7 @@ const pintarCarrito = () => {
             <p>Cantidad: ${product.cantidad}</p>
             <span class="sumar"> ➕ </span>
             <p>Total: $${product.cantidad * product.precio}</p>
+            <span class="delete-product"> ❌ </span>
         `;
 
         modalContainer.append(carritoContent);
@@ -136,13 +137,23 @@ const pintarCarrito = () => {
             pintarCarrito();
         });
 
-        let eliminar = document.createElement('span');
-        eliminar.innerText = '❌';
-        eliminar.className = 'delete-product';
-        carritoContent.append(eliminar);
-
+        const eliminarProducto = (id) => {
+            const foundId = carrito.find((element) => element.id === id)
+        
+            console.log(foundId)
+        
+            carrito = carrito.filter((carritoId) => {
+                return carritoId !== foundId;
+            });
+            carritoCounter();
+            pintarCarrito();
+            guardarCarrito(carrito);
+        };
+        
+        let eliminar = carritoContent.querySelector('.delete-product');
+        
         eliminar.addEventListener('click', () => {
-            eliminarProducto();
+            eliminarProducto(product.id);
             const toastDos = Swal.mixin({
                 toast: true,
                 position: 'top-end',
@@ -171,16 +182,5 @@ const pintarCarrito = () => {
 }
 
 verCarrito.addEventListener('click', pintarCarrito);
-
-const eliminarProducto = () => {
-    const foundId = carrito.find((element) => element.id)
-
-    carrito = carrito.filter((carritoId) => {
-        return carritoId !== foundId;
-    });
-    carritoCounter();
-    pintarCarrito();
-    guardarCarrito(carrito);
-};
 
 export { carrito }
